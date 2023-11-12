@@ -98,14 +98,14 @@ df.dropna(inplace=True)
 # Separar características y etiquetas
 X = df.iloc[:, 2:].values
 y = df.iloc[:, 1].values
-y = np.where(y == 'M', 1, 0)
+y = np.where(y == 'M', 1, 0) # Los tumores Malígnos (M) se convierten en 1 y los Benígnos (B) en 0
 
 # Normalizar
 from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
 X = scaler.fit_transform(X)
 
-# Dividir el dataset
+# Dividir el dataset en entrenamiento y prueba
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=35)
 
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, f1_score, accuracy_score, recall_score
