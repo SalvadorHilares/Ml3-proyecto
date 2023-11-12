@@ -118,7 +118,7 @@ def predict(model, X):
     return np.argmax(probabilities, axis=1)
 
 # Definición de las configuraciones
-learning_rates = [0.2, 0.1, 0.08, 0.5]
+learning_rates = [0.2, 0.1, 0.08, 0.05]
 configurations = []
 for lr in learning_rates:
     configurations.extend([
